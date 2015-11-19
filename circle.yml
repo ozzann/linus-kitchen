@@ -16,4 +16,4 @@ dependencies:
 test:
   override:
     - vagrant up
-    - mkdir $CIRCLE_TEST_REPORTS/rspec && cp cookbooks/vm/test/*.xml $CIRCLE_TEST_REPORTS/rspec/
+    - mkdir $CIRCLE_TEST_REPORTS/junit && cp cookbooks/vm/test/*.xml $CIRCLE_TEST_REPORTS/junit/
