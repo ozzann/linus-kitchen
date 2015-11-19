@@ -4,7 +4,7 @@ describe 'vm::chefdk' do
 
   it 'runs these tests under the vagrant user' do
     expect(devbox_user_command('whoami').stdout.strip).to eq 'vagrant'
-    expect(devbox_user_command('echo $HOME').stdout.strip).to eq '/home/vagrant'
+    expect(devbox_user_command('echo $HOME').stdout.strip).to eq '/home/vgrant'
     expect(devbox_user_command('echo $SHELL').stdout.strip).to eq '/bin/bash'
     expect(devbox_user_command('echo $VAGRANT_DEFAULT_PROVIDER').stdout.strip).to eq 'docker'
   end
@@ -22,7 +22,7 @@ describe 'vm::chefdk' do
     expect(devbox_user_command('bundle config --global jobs').stdout).to contain '16'
   end
   it 'configures bundler to retry 3 times' do
-    expect(devbox_user_command('bundle config --global retry').stdout).to contain '3'
+    expect(devbox_user_command('bundle config --global retry').stdout).to contain '4'
   end
   it 'configures bundler to install gems to ~/.chefdk' do
     expect(devbox_user_command('bundle config --global path').stdout).to contain '/home/vagrant/.chefdk/gem/ruby/2.1.0'
